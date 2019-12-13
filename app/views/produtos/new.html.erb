@@ -1,4 +1,10 @@
-<%= form_for Produto.new do |form| %>
+<% @produto.errors.full_messages.each do |msg| %>
+    <div class="alert alert-danger" role="alert">
+        <%= msg %>
+    </div>
+<% end %>
+
+<%= form_for @produto do |form| %>
     <div class="row">
         <div class="col-sm-8">
             <div class="form-group">
@@ -18,7 +24,7 @@
     </div>
 
     <div class="row">
-        <div class="col-sm-1">
+        <div class="col-sm-2">
             <div class="form-group">
                 <%= form.label :Preço%>
                 <%= form.number_field :preco, step:0.01, class:"form-control" %>
@@ -27,7 +33,7 @@
     </div>
 
     <div class="row">
-        <div class="col-sm-1">
+        <div class="col-sm-2">
             <div class="form-group">
                 <%= form.label :Quantidade%>
                 <%= form.number_field :quantidade, class:"form-control" %>
