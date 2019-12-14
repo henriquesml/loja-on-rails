@@ -10,6 +10,7 @@ gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
+gem "font-awesome-rails"
 gem 'twitter-bootstrap-rails'
 gem 'rails-i18n'
 gem 'sass-rails', '>= 6'

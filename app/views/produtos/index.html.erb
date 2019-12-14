@@ -9,6 +9,7 @@
         <tr>
             <td>Nome</td>
             <td>Descrição</td>
+            <td>Departamento</td>
             <td>Preço</td>
             <td>Quantidade</td>
             <td colspan="1">
@@ -19,21 +20,31 @@
         <tr>
             <td><%= produto.nome %></td>
             <td><%= produto.descricao %></td>
+            <td><%= produto.departamento.nome %></td>
             <td><%= produto.preco %></td>
             <td><%= produto.quantidade %></td>
-            <td><%= button_to "Remover", produto, method: :delete, class: "btn btn-danger", data: { confirm: "Deseja remover o produto #{produto.nome}?"} %></td>
+           
+             <td class="btn-alt-rem">       
+                <%= link_to content_tag(:i,nil, class: 'fa fa-pencil '), edit_produto_path(produto), class: "btn btn-default" %>   
+                <%= link_to content_tag(:i,nil, class: 'fa fa-trash icon'), produto, method: :delete, class: "btn btn-danger", data: { confirm: "Deseja remover o produto #{produto.nome}?"} %>   
+            </td>
         </tr>
     <% end %>
     </tbody>
 </table>
-<div class="alert alert-success" role="alert">
-    <h4 class="alert-heading">Produto com menor valor</h4>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h4>Produto com menor preço</h4>
+    </div>
 </div>
+
 <table class="table table-bordered table-hover" >
     <thead>
         <tr>
             <td>Nome</td>
-            <td>Descroção</td>
+            <td>Descrição</td>
+            <td>Departamento</td>
             <td>Preço</td>
             <td>Quantidade</td>
         </tr>
@@ -43,6 +54,7 @@
         <tr>
             <td><%= produto.nome %></td>
             <td><%= produto.descricao %></td>
+            <td><%= produto.departamento.nome %></td>
             <td><%= produto.preco %></td>
             <td><%= produto.quantidade %></td>
         </tr>
