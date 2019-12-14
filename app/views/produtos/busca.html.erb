@@ -15,7 +15,10 @@
             <td><%= produto.descricao %></td>
             <td><%= produto.preco %></td>
             <td><%= produto.quantidade %></td>
-            <td><%= button_to "Remover", produto, method: :delete, class: "btn btn-danger", data: { confirm: "Deseja remover o produto #{produto.nome}?"} %></td>
+            <td class="btn-alt-rem">       
+                <%= link_to content_tag(:i,nil, class: 'fa fa-pencil '), edit_produto_path(produto), class: "btn btn-default" %>   
+                <%= link_to content_tag(:i,nil, class: 'fa fa-trash icon'), produto, method: :delete, class: "btn btn-danger", data: { confirm: "Deseja remover o produto #{produto.nome}?"} %>   
+            </td>
         </tr>
     <% end %>
     </tbody>
