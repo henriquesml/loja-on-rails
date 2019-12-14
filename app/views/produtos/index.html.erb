@@ -16,20 +16,7 @@
         </tr>
     </thead>
     <tbody>
-    <% @produtos.each do |produto| %>
-        <tr>
-            <td><%= produto.nome %></td>
-            <td><%= produto.descricao %></td>
-            <td><%= produto.departamento.nome %></td>
-            <td><%= produto.preco %></td>
-            <td><%= produto.quantidade %></td>
-           
-             <td class="btn-alt-rem">       
-                <%= link_to content_tag(:i,nil, class: 'fa fa-pencil '), edit_produto_path(produto), class: "btn btn-default" %>   
-                <%= link_to content_tag(:i,nil, class: 'fa fa-trash icon'), produto, method: :delete, class: "btn btn-danger", data: { confirm: "Deseja remover o produto #{produto.nome}?"} %>   
-            </td>
-        </tr>
-    <% end %>
+        <%= render @produtos %>
     </tbody>
 </table>
 
@@ -47,17 +34,10 @@
             <td>Departamento</td>
             <td>Preço</td>
             <td>Quantidade</td>
+            <td colspan="1">
         </tr>
     </thead>
     <tbody>
-    <% @produto_com_desconto.each do |produto| %>
-        <tr>
-            <td><%= produto.nome %></td>
-            <td><%= produto.descricao %></td>
-            <td><%= produto.departamento.nome %></td>
-            <td><%= produto.preco %></td>
-            <td><%= produto.quantidade %></td>
-        </tr>
-    <% end %>
+        <%= render @produto_com_desconto %>
     </tbody>
 </table>
