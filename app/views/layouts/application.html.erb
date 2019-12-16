@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <%= favicon_link_tag asset_path('logo.png') %>
     <title>Loja</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,6 +11,7 @@
   </head>
 
   <body>
+    
     <%= nav_bar brand: "Loja", brand_link: root_url do %>
       <%= menu_group do %>
         <%= menu_item "Criar novo produto", new_produto_path %>
